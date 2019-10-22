@@ -1,5 +1,12 @@
-from random import choice
+import sys
 
-def rearrange():
-    """Be able to rearrange words that are provided"""
-    
+def rearrange(words):
+    """Rearrange words that are provided"""
+    randomize_words = []
+
+    return randomize_words
+
+if __name__ == '__main__':
+    words = sys.argv[1:]
+    print(words)
+    rearrange(words)
