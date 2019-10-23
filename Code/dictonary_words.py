@@ -1,5 +1,4 @@
 import sys
-import os
 
 def sentence(number):
     """Create sentences from the provided words"""
