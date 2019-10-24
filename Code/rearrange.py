@@ -12,8 +12,13 @@ def rearrange(words):
             count += 1
     return (" ".join(word_list))
 
+def reverse(words):
+    inputWord = " ".join(words)
+    output = inputWord[::-1]
+    return output
+
 if __name__ == '__main__':
     words = sys.argv[1:]
-    word_list = rearrange(words)
-    print(word_list)
-    
+    #word_list = rearrange(words)
+    #print(word_list)
+    print(reverse(words))
