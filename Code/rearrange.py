@@ -13,6 +13,7 @@ def rearrange(words):
     return (" ".join(word_list))
 
 def reverse(words):
+    """Reverse words that are provided"""
     inputWord = " ".join(words)
     output = inputWord[::-1]
     return output
