@@ -18,9 +18,6 @@ def reverse(words):
     output = inputWord[::-1]
     return output
 
-def histogram():
-    """Writes histograms of reoccuring words"""
-
 if __name__ == '__main__':
     words = sys.argv[1:]
     #word_list = rearrange(words)
