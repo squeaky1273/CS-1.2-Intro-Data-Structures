@@ -1,18 +1,30 @@
 import sys
+from random import choice
 
-def histogram():
+def histogram(file_name):
     """Writes histograms of reoccuring words"""
     #list of lists
-    #histogram = []
+    histogram = []
+    for word in file_name:
+    
     #dictionary
-    #histogram = {}
+    histogram = {}
+    for word in file_name:
+    
     #list of tuples
-    #histogram = []
+    histogram = [] 
+    for word in file_name:
+    
     #list of counts
     #histogram = []
 
 def unique_words(histogram):
     """Takes the histogram arguments"""
+    count = 0
+    for list in histogram:
+        for index in choice(len(list)):
+            if type(list[index]) is int and list[index]==1:
+                count += 1
 
 def frequency(words, histogram):
     """Returns number of times the word apppears"""
