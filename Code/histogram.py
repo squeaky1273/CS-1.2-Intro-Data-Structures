@@ -36,13 +36,14 @@ def tuples(word_list):
     #histogram = []
     #return histogram
 
-def histogram(file_name):
+def histogram(content):
     """Writes histograms of reoccuring words"""
-    word_list = file_name
+    f = open("text.txt", "r")
+    word_list = f.read().split()
     #histogram = list_of_lists(word_list)
     #histogram = tuples(word_list)
     histogram = dictionary(word_list)
-    return histogram(file_name)
+    return histogram
 
 def unique_words(histogram):
     """Takes the histogram arguments"""
@@ -60,5 +61,4 @@ if __name__ == "__main__":
     histogram = histogram(sys.argv[1])
     f = open("text.txt", "r")
     content = f.read()
-    histogram(content)
-    pass
+    print(histogram)
