@@ -30,7 +30,7 @@ def tuples(word_list):
         if words in histogram:
             histogram[words] += 1
         else:
-            histogram[words] = 1
+            histogram.append((words, 1))
     return histogram
 
 #def list_of_counts():
@@ -42,8 +42,8 @@ def histogram(content):
     """Writes histograms of reoccuring words"""
     f = open("text.txt", "r")
     word_list = f.read().split()
-    histogram = list_of_lists(word_list)
-    #histogram = tuples(word_list)
+    #histogram = list_of_lists(word_list)
+    histogram = tuples(word_list)
     #histogram = dictionary(word_list)
     return histogram
 
