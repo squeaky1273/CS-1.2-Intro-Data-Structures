@@ -26,11 +26,13 @@ def dictionary(word_list):
 def tuples(word_list):
     """list of tuples"""
     histogram = [] 
-    for words in word_list:
-        if words in histogram:
-            histogram[words] += 1
+    for words in word_list: #For the words in the provided text
+        for tuples in histogram: #For the words in the histogram
+            if tuples[0] == words: #If the tuples equals the words in the text
+                histogram[histogram.index(tuples)] = (words, (tuples[1] + 1)) #From the index of words, add 1 in it appears more than once
+                break
         else:
-            histogram.append((words, 1))
+            histogram.append((words, 1)) #The word will have just one for the frequency
     return histogram
 
 #def list_of_counts():
@@ -60,7 +62,7 @@ def frequency(words, histogram):
     return histogram[words]
 
 if __name__ == "__main__":
-    histogram = histogram(sys.argv[1])
+    #histogram = histogram(sys.#argv[1])
     f = open("text.txt", "r")
     content = f.read()
-    print(histogram)
+    print(histogram(content))
