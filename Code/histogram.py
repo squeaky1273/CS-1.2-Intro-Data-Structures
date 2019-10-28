@@ -2,34 +2,39 @@ import sys
 from random import choice
 
 def list_of_lists(word_list):
+    """list of lists"""
     histogram = []
     for words in word_list:
         if words in histogram:
             histogram[words] += 1
         else:
             histogram[words] = 1
+    return histogram
 
 def dictionary(word_list):
-    #dictionary
+    """dictionary"""
     histogram = {}
     for words in word_list:
         if words in histogram:
             histogram[words] += 1
         else:
             histogram[words] = 1
+    return histogram
 
 def tuples(word_list):
-    #list of tuples
+    """list of tuples"""
     histogram = [] 
     for words in word_list:
         if words in histogram:
             histogram[words] += 1
         else:
             histogram[words] = 1
+    return histogram
 
 #def list_of_counts():
     #list of counts
     #histogram = []
+    #return histogram
 
 def histogram(file_name):
     """Writes histograms of reoccuring words"""
@@ -37,7 +42,7 @@ def histogram(file_name):
     #histogram = list_of_lists(word_list)
     #histogram = tuples(word_list)
     histogram = dictionary(word_list)
-    return histogram
+    return histogram(file_name)
 
 def unique_words(histogram):
     """Takes the histogram arguments"""
