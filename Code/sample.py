@@ -5,7 +5,7 @@ import random
 def sample_by_frequency(histogram):
     """Returns a single word at random 
     from the provided words/text"""
-    word_list = ""
+    word_list = open("text.txt", "r")
     words = list(histogram)
     word_index = random.randint(0, len(words) - 1)
     word_list = words[word_index]
