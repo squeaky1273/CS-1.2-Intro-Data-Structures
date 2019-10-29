@@ -70,4 +70,3 @@ if __name__ == "__main__":
     f = open("text.txt", "r")
     content = f.read()
     print(histogram(content))
-    #sample_by_frequency(histogram)
