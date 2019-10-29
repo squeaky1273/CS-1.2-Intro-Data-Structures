@@ -10,10 +10,13 @@ def sample_by_frequency(histogram):
     word_index = random.randint(0, len(words) - 1) #Randomly choose a word from the list
     word_list = words[word_index]
     return word_list
-
-def test_frequency(histogram):
-    pass
     
 if __name__ == "__main__":
     histogram = histogram.histogram(sys.argv[1])
     print(sample_by_frequency(histogram))
+    words = []
+    sample = range(100)
+    for count in sample:
+        random_word = sample_by_frequency(histogram)
+        words.append(random_word)
+    print(words)
