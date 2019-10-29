@@ -64,8 +64,12 @@ def frequency(words, histogram):
     """Returns number of times the word apppears"""
     return histogram[words]
 
+def sample_by_frequency(histogram):
+    pass
+
 if __name__ == "__main__":
     #histogram = histogram(sys.argv[1])
     f = open("text.txt", "r")
     content = f.read()
     print(histogram(content))
+    #sample_by_frequency(histogram)
