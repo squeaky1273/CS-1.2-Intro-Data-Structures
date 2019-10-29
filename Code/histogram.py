@@ -36,10 +36,11 @@ def tuples(word_list): #Harder, Better than list of lists in terms of space effi
     return histogram #Return the tuple part of the histogram
 
 """
-def list_of_counts(): #Hardest, Best in terms of space efficiency, Slowest
-    list of counts #The numbers are listed once with a list of the words that appeared that many times  ex: [(1, ['one', 'two', 'red', 'blue']) (4, ['fish'])]
-    histogram = []
-    return histogram
+def list_of_counts(word_list): #Hardest, Best in terms of space efficiency, Slowest
+    #list of counts #The numbers are listed once with a list of the words that appeared that many times  ex: [(1, ['one', 'two', 'red', 'blue']) (4, ['fish'])]
+    hist = histogram(word_list)
+    count = {}
+    return count.append((i, words))
 """
 
 def histogram(content):
@@ -63,9 +64,6 @@ def unique_words(histogram):
 def frequency(words, histogram):
     """Returns number of times the word apppears"""
     return histogram[words]
-
-def sample_by_frequency(histogram):
-    pass
 
 if __name__ == "__main__":
     #histogram = histogram(sys.argv[1])
