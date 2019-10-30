@@ -40,7 +40,7 @@ def list_of_counts(word_list): #Hardest, Best in terms of space efficiency, Slow
     #list of counts #The numbers are listed once with a list of the words that appeared that many times  ex: [(1, ['one', 'two', 'red', 'blue']) (4, ['fish'])]
     hist = histogram(word_list)
     count = {}
-    return count.append((i, words))
+    return histogram
 """
 
 def histogram(content):
