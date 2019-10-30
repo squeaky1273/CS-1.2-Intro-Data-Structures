@@ -14,11 +14,11 @@ def sample_by_frequency(histogram):
 if __name__ == "__main__":
     histogram = histogram.histogram(sys.argv[1])
     print(sample_by_frequency(histogram))
-    """
-    words = [] #Create empty list
-    sample = range(100) #Choose from 100 random outputs
-    for count in sample:
+
+    words = {} #Create empty list
+    for count in range(100):
         random_word = sample_by_frequency(histogram)
-        words.append(random_word) #Add the word to the list
+        words[random_word] = words.get(random_word, 0) + 1
     print(words)
-    """
+
+ 
