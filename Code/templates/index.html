@@ -6,12 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Tweet Generator</title>  
-        
-    <!-- BOOTSTRAP -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <!-- BOOTSTRAP THEME -->
-    <link rel="stylesheet" href="https://bootswatch.com/4/spacelab/bootstrap.min.css">
+    <title>Tweet Generator</title>
 </head>
 
 <body>
@@ -22,18 +17,21 @@
         </div>
     </nav>
     <br>
-    <h1><center>Tweet Generator</center></h1>
-    <p><center>Add the next tweet is.....</center></p>
-    <p><center>*drum roll*</center></p>
+    <h1><font position="center" size="20" color="white"><center>Tweet Generator</center></font></h1>
+    <p><font size="5" color="white"><center>Add the next tweet is..</center></font></p>
+    <p><font size="5" color="white"><center>*drum roll*</center></font></p>
     <br>
-
+    <style>
+    body {
+        background-image: url('static/img/theater.jpeg');
+        background-repeat: no-repeat;
+        background-size: 100% 490%;
+    }
+    </style>
     <!-- TWEET -->
-    <div class='tweet'>
-        <center>{% for word in random_word %}
+            <font size="5px"color="white"><center>{% for word in random_word %}
             {{ word }}
-        {% endfor %}</center>
-
-    </div>
+        {% endfor %}</center></font>
 
 </body>
 </html>
