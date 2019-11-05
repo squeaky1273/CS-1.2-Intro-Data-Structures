@@ -1,4 +1,4 @@
-from flask import Flask, render_template 
+from flask import Flask, render_template, redirect, url_for, request
 from histogram import histogram 
 from sample import sample_by_frequency 
 import os
