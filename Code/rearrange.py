@@ -1,4 +1,4 @@
-from random import choice
+import random
 import sys
 
 def rearrange(words):
@@ -6,7 +6,7 @@ def rearrange(words):
     word_list = []
     count = 0
     while count < len(words):
-        new_word = choice(words)
+        new_word = random(words)
         if new_word not in word_list: #If the new word is not already in the list, then add it to the list
             word_list.append(new_word)
             count += 1
