@@ -29,10 +29,12 @@
     }
     </style>
     <!-- TWEET -->
-            <font size="5px"color="white"><center>{% for word in random_word %}
+        <font size="5px"color="white"><center>{% for word in random_word %}
             {{ word }}
         {% endfor %}</center></font>
-
+    <br>
+    <div >
+        <center><input type="button" onClick="history.go(0)" value="Reload"></center>
+    </div>
 </body>
 </html>
-
