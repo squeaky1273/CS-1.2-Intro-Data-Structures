@@ -1,7 +1,9 @@
 from dictogram import Dictogram
-from listogram import Listogram
+#from listogram import Listogram
 
 class Markov_chain():
+    def __init__(self):
+
     def markov_chain():
         markov = {}
         for _ in range(len(word_list)):
