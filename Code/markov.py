@@ -8,7 +8,7 @@ class Markov_chain():
                 pass
 """
 f = open('text.txt')
-text = f.read().lower().split()
+text = f.read().lower().join()
 
 # print(text)
 
@@ -16,20 +16,20 @@ def markov_chain(text):
     markov = {}
 
     for _ in range(len(text)-1):
-        word_1 = text[_] 
+        word_1 = text[_]
         word_2 = text[_+1]
-    
-        #if word_1 in markov.keys(): 
+
+        #if word_1 in markov.keys():
             #markov[word_1].add_count(word_2)
 
         #markov[word_1] = Dictogram()
         # print(word_1)
         # print(markov)
-        
+
         #note: this one works
         if word_1 not in markov.keys():
             markov[word_1] = Dictogram()
-        
+
         markov.get(word_1).add_count(word_2)
 
     print(markov)
@@ -38,14 +38,17 @@ def markov_chain(text):
 def random_word(markov):
     markov.sample()
 
-#def random_walk(word):
-    #sentence = []
-    #sentence.append(word)
+def random_walk(markov, word):
+    sentence = []
+    sentence.append(word)
     #for _ in range(word):
         #sentence.append(word)
-    
-    #return sentence
+
+    return sentence
 
 if __name__ ==  '__main__':
     # random_walk(markov_chain(text))
     markov_chain(text)
+    
+    capital = " ".join(random_word).capitalize()
+    print(f"{capital}.")

@@ -4,7 +4,7 @@ import sys
 def sentence(number):
     """Create sentences with the provided words"""
     f = open('/usr/share/dict/words', 'r')
-    word_list = f.read().splitlines()
+    word_list = f.read()
     f.close()
     sentence = []
     count = 0
@@ -12,7 +12,7 @@ def sentence(number):
         words = choice(word_list)
         sentence.append(words)
         count += 1
-    return (" ".join(sentence))
+    return ("".join(sentence))
 
 if __name__ == "__main__":
     number = sys.argv[1]
