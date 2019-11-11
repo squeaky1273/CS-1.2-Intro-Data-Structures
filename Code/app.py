@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, url_for, request
-from histogram import histogram 
+#from histogram import histogram 
+from dictogram import Dictogram
 from sample import sample_by_frequency 
 import os
 
@@ -7,8 +8,8 @@ app = Flask(__name__)
 
 @app.route('/') 
 def index(): 
-    content = 'text.txt'
-    histo = histogram(content)
+    #histo = histogram(content)
+    histo = Dictogram(content)
     random_word = list()
     for _ in range(10):
         random_word.append(sample_by_frequency(histo)) 
