@@ -8,7 +8,7 @@ class Markov_chain():
                 pass
 """
 f = open('text.txt')
-text = f.read().lower().join()
+text = f.read().lower().split
 
 # print(text)
 
@@ -40,15 +40,12 @@ def random_word(markov):
 
 def random_walk(markov, word):
     sentence = []
-    sentence.append(word)
-    #for _ in range(word):
-        #sentence.append(word)
+    #sentence.append(word)
+    for _ in range(word):
+        sentence.append(word)
 
     return sentence
 
 if __name__ ==  '__main__':
     # random_walk(markov_chain(text))
     markov_chain(text)
-    
-    capital = " ".join(random_word).capitalize()
-    print(f"{capital}.")
