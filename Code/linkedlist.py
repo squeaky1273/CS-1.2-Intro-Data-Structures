@@ -57,11 +57,11 @@ class LinkedList(object):
         TODO: Running time: O(???) Why and under what conditions?"""
         # TODO: Loop through all nodes and count one for each
 
-        length = 0
+        length = 0 #Note: Start at 0
         current_node = self.head
         while current_node is not None:
             current_node = current_node.next
-            length +=1
+            length +=1 #Note: Add to the length
         return length
 
     def append(self, item):
@@ -70,9 +70,9 @@ class LinkedList(object):
         # TODO: Create new node to hold given item
         # TODO: Append node after tail, if it exists
 
-        new_node = Node(item)
-        if self.tail is not None:
-            self.tail.next = new_node
+        new_node = Node(item) #Note: Create new node
+        if self.tail is not None: #Note: If there is no tail
+            self.tail.next = new_node 
         else:
             self.head = new_node
         self.tail = new_node
@@ -98,7 +98,7 @@ class LinkedList(object):
         # TODO: Loop through all nodes to find item where quality(item) is True
         # TODO: Check if node's data satisfies given quality function
         
-        current_node = self.head
+        current_node = self.head #Note: The current node is the head
         while current_node is not None:
             if quality(current_node.data) == True:
                 return current_node.data
@@ -120,29 +120,32 @@ class LinkedList(object):
             current_node = self.head
             new_node = self.head.next
             
-            if current_node.data is not item:
+            if current_node.data is not item: #Note: If the data is not the item
                 while current_node.data is not item and current_node.next is not None:
                     prev_node = current_node
                     current_node = current_node.next
                     new_node = current_node.next
-                if current_node.data is not item and current_node is self.tail:
-                    raise ValueError('Item not found: {}'.format(item))
-                elif new_node is None:
+                
+                if current_node.data is not item and current_node is self.tail: #Note: If the data is not the item AND the node is the tail,
+                    raise ValueError('Item not found: {}'.format(item)) #Return an error
+                
+                elif new_node is None: #Note: If there is no new node
                     prev_node.next = None
                     self.tail = prev_node
                     if prev_node is self.head:
                         self.tail = self.head
-                else: prev_node.next = new_node
+                
+                else: prev_node.next = new_node #Note: The next node in the new node
             
-            elif new_node is None:
-                self.head = None
-                self.tail = None
+            elif new_node is None: #Note: If there is no new node
+                self.head = None #Note: There is no head
+                self.tail = None #Note: There is no tail
             
             else:
                 self.head = new_node
         
         else:
-            raise ValueError('Item not found: {}'.format(item))
+            raise ValueError('Item not found: {}'.format(item)) #Note: There is an error
 
 
 def test_linked_list():
