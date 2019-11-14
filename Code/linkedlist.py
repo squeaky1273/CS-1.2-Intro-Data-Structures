@@ -115,7 +115,7 @@ class LinkedList(object):
         # TODO: Otherwise raise error to tell user that delete has failed
         # Hint: raise ValueError('Item not found: {}'.format(item))
         
-        if self.head is not None:
+        if self.head is not None: #Note: If there is a head
             prev_node = None
             current_node = self.head
             new_node = self.head.next
