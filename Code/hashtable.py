@@ -81,7 +81,7 @@ class HashTable(object):
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         index = self._bucket_index(key)
-        if self.buckets[index].is_empty() == False: #Note: There is are items in the buckets
+        if self.buckets[index].is_empty() == False: #Note: There are items in the buckets
             return self.buckets[index].find(lambda item: item[0] == key) is not None #Note: Return the given item.
         return False
 
@@ -97,9 +97,9 @@ class HashTable(object):
         # Hint: raise KeyError('Key not found: {}'.format(key))
         index = self._bucket_index(key)
         if self.contains(key):
-            return self.buckets[index].find(lambda item: item[0] == key)[1]
+            return self.buckets[index].find(lambda item: item[0] == key)[1] #Note: Return the value
         else:
-            raise KeyError('Key not found: {}'.format(key))
+            raise KeyError('Key not found: {}'.format(key)) #Note: Else return error
 
     def set(self, key, value):
         """Insert or update the given key with its associated value.
@@ -113,7 +113,7 @@ class HashTable(object):
         index = self._bucket_index(key)
         bucket = self.buckets[index]
         if self.contains(key):
-            self.buckets[index].delete(bucket.find(lambda item: item[0] == key))
+            self.buckets[index].delete(bucket.find(lambda item: item[0] == key)) #Note: Update the value
         self.buckets[index].append((key, value))
 
     def delete(self, key):
@@ -129,7 +129,7 @@ class HashTable(object):
         index = self._bucket_index(key)
         bucket = self.buckets[index]
         if self.contains(key): #Note: If there is an item, then delete it
-            self.buckets[index].delete(bucket.find(lambda item: item[0] == key))
+            self.buckets[index].delete(bucket.find(lambda item: item[0] == key)) #Note: Delete the entry
         else:
             raise KeyError('Key not found: {}'.format(key)) #Note: Else return error
 
