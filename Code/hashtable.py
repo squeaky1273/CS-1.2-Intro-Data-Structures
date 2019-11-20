@@ -111,8 +111,9 @@ class HashTable(object):
         # TODO: If found, update value associated with given key
         # TODO: Otherwise, insert given key-value entry into bucket
         index = self._bucket_index(key)
+        bucket = self.buckets[index]
         if self.contains(key):
-            self.buckets[index].delete(lambda item: item[0] == key)
+            self.buckets[index].delete(bucket.find(lambda item: item[0] == key))
         self.buckets[index].append((key, value))
 
     def delete(self, key):
@@ -126,8 +127,9 @@ class HashTable(object):
         # TODO: Otherwise, raise error to tell user delete failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
         index = self._bucket_index(key)
+        bucket = self.buckets[index]
         if self.contains(key): #Note: If there is an item, then delete it
-            self.buckets[index].delete(lambda item: item[0] == key)
+            self.buckets[index].delete(bucket.find(lambda item: item[0] == key))
         else:
             raise KeyError('Key not found: {}'.format(key)) #Note: Else return error
 
