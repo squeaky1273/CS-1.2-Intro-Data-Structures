@@ -4,7 +4,7 @@ import sys
 def sentence(number):
     """Create sentences with the provided words"""
     f = open('/usr/share/dict/words', 'r')
-    word_list = f.read().splitlines()
+    word_list = f.read().split()
     f.close()
     sentence = []
     count = 0

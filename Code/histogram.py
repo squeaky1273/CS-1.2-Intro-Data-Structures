@@ -47,7 +47,7 @@ def histogram(content):
     """Writes histograms of reoccuring words"""
     f = open("text.txt", "r") #Opens the text file
     #f = open(content, 'r') 
-    word_list = f.read().splitlines() #Reads the text file
+    word_list = f.read().split() #Reads the text file
 
     histogram = dictionary(word_list)
     #histogram = list_of_lists(word_list)
