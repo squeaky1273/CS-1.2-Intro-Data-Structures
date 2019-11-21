@@ -81,8 +81,9 @@ class HashTable(object):
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
         index = self._bucket_index(key)
+        bucket = self.buckets[index]
         if self.buckets[index].is_empty() == False: #Note: There are items in the buckets
-            return self.buckets[index].find(lambda item: item[0] == key) is not None #Note: Return the given item.
+            return bucket.find(lambda item: item[0] == key) is not None #Note: Return the given item.
         return False
 
     def get(self, key):
@@ -96,8 +97,9 @@ class HashTable(object):
         # TODO: Otherwise, raise error to tell user get failed
         # Hint: raise KeyError('Key not found: {}'.format(key))
         index = self._bucket_index(key)
+        bucket = self.buckets[index]
         if self.contains(key):
-            return self.buckets[index].find(lambda item: item[0] == key)[1] #Note: Return the value
+            return bucket.find(lambda item: item[0] == key)[1] #Note: Return the value
         else:
             raise KeyError('Key not found: {}'.format(key)) #Note: Else return error
 
