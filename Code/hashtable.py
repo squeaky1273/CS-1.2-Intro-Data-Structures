@@ -27,7 +27,7 @@ class HashTable(object):
     def keys(self):
         """Return a list of all keys in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O();
+        """Running time: O(n);
         """
         # Collect all keys in each bucket
         all_keys = []
@@ -39,7 +39,7 @@ class HashTable(object):
     def values(self):
         """Return a list of all values in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O();
+        """Running time: O(n);
         """
         # TODO: Loop through all buckets
         # TODO: Collect all values in each bucket
@@ -63,7 +63,7 @@ class HashTable(object):
     def length(self):
         """Return the number of key-value entries by traversing its buckets.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O(n);
+        """Running time: O(1);
         """
         # TODO: Loop through all buckets
         # TODO: Count number of key-value entries in each bucket
@@ -76,7 +76,7 @@ class HashTable(object):
     def contains(self, key):
         """Return True if this hash table contains the given key, or False.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O();
+        """Running time: O(1);
         """
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
@@ -89,7 +89,7 @@ class HashTable(object):
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O();
+        """Running time: O(1);
         """
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
@@ -106,7 +106,7 @@ class HashTable(object):
     def set(self, key, value):
         """Insert or update the given key with its associated value.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O();
+        """Running time: O(1);
         """
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
@@ -121,7 +121,7 @@ class HashTable(object):
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O(n);
+        """Running time: O(1);
         """
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
@@ -154,7 +154,7 @@ def test_hash_table():
     print('length: {}'.format(ht.length()))
 
     # Enable this after implementing delete method
-    delete_implemented = False
+    delete_implemented = True
     if delete_implemented:
         print('\nTesting delete:')
         for key in ['I', 'V', 'X']:
