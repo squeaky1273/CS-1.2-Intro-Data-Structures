@@ -116,7 +116,7 @@ class LinkedList(object):
                 current_node = current_node.next
         return None
 
-    def replace(self, item, new):
+    def replace(self, curr_item, new_item):
         #Replace the cuurent item with a new item
         curr_node = self.head
 
