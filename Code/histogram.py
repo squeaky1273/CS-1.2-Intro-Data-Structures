@@ -47,7 +47,7 @@ def histogram(content):
     """Writes histograms of reoccuring words"""
     f = open("text.txt", "r") #Opens the text file
     #f = open(content, 'r') 
-    word_list = f.read() #Reads the text file
+    word_list = f.read().splitlines() #Reads the text file
 
     histogram = dictionary(word_list)
     #histogram = list_of_lists(word_list)
@@ -68,8 +68,8 @@ def frequency(words, histogram):
 
 if __name__ == "__main__":
     #histogram = histogram(sys.argv[1])
-    # f = open("text.txt", "r")
-    # content = f.read()
+    #f = open("text.txt", "r")
+    #content = f.read().splitlines()
     
     content = "text.txt"
     print(histogram(content))
