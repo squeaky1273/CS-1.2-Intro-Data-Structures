@@ -116,6 +116,17 @@ class LinkedList(object):
                 current_node = current_node.next
         return None
 
+    def replace(self, item, new):
+        #Replace the cuurent item with a new item
+        curr_node = self.head
+
+        while curr_node is not None:
+            if curr_node.data == curr_item:
+                curr_node.data = new_item
+                return 
+            else:
+                curr_node = curr_node.next
+
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
         TODO: Best case running time: O(???) Why and under what conditions?
@@ -177,7 +188,7 @@ def test_linked_list():
     print('length: {}'.format(ll.length()))
 
     # Enable this after implementing delete method
-    delete_implemented = False
+    delete_implemented = True
     if delete_implemented:
         print('\nTesting delete:')
         for item in ['B', 'C', 'A']:
