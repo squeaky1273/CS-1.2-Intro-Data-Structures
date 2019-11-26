@@ -49,3 +49,4 @@ def random_walk(markov, word):
 if __name__ ==  '__main__':
     # random_walk(markov_chain(text))
     markov_chain(text)
+    
