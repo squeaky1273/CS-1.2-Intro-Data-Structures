@@ -38,15 +38,14 @@ def markov_chain(text):
 def random_word(markov):
     markov.sample()
 
-def random_walk(markov, word):
+def random_walk(word):
     sentence = []
-    #sentence.append(word)
-    for _ in range(word):
-        sentence.append(word)
-
-    return sentence
+    for word in words:
+        if word[-1] in ['.','!','?'] and word != '.':
+            sentence.append(word)
+    print(sentence)
 
 if __name__ ==  '__main__':
-    # random_walk(markov_chain(text))
-    markov_chain(text)
+    random_walk(markov_chain(text))
+    #markov_chain(text)
     
