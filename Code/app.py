@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 
-f = open('text.txt', 'r')
+f = open('corpus.txt', 'r')
 content = f.read().split()
 
 @app.route('/') 

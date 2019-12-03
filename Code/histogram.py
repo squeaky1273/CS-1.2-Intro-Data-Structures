@@ -45,7 +45,7 @@ def list_of_counts(word_list): #Hardest, Best in terms of space efficiency, Slow
 
 def histogram(content):
     """Writes histograms of reoccuring words"""
-    f = open("text.txt", "r") #Opens the text file
+    f = open("corpus.txt", "r") #Opens the text file
     #f = open(content, 'r') 
     word_list = f.read().split() #Reads the text file
 
@@ -68,8 +68,8 @@ def frequency(words, histogram):
 
 if __name__ == "__main__":
     #histogram = histogram(sys.argv[1])
-    #f = open("text.txt", "r")
+    #f = open(".txt", "r")
     #content = f.read().splitlines()
     
-    content = "text.txt"
+    content = "corpus.txt"
     print(histogram(content))

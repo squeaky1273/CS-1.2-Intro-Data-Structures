@@ -7,7 +7,7 @@ class Markov_chain():
             if words = None:
                 pass
 """
-f = open('text.txt')
+f = open('corpus.txt')
 text = f.read().lower().split
 
 # print(text)
