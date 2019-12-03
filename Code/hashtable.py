@@ -52,7 +52,9 @@ class HashTable(object):
     def items(self):
         """Return a list of all items (key-value pairs) in this hash table.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O(n); The algorithm goes through the buckets to show the items to each bucket.
+        """Best Running time: O(n); 
+        Worst Running time: O(n);
+        The algorithm goes through the buckets to show the items to each bucket.
         """
         # Collect all pairs of key-value entries in each bucket
         all_items = []
@@ -63,7 +65,9 @@ class HashTable(object):
     def length(self):
         """Return the number of key-value entries by traversing its buckets.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O(n); The algorithm goes through all of the buckets and counts all the items in each bucket.
+        """Best Running time: O(n); 
+        Worst Running time: O(n);
+        The algorithm goes through all of the buckets and counts all the items in each bucket.
         """
         # TODO: Loop through all buckets
         # TODO: Count number of key-value entries in each bucket
@@ -76,7 +80,9 @@ class HashTable(object):
     def contains(self, key):
         """Return True if this hash table contains the given key, or False.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O(n); The algorithm finds the key of the linkedlist and the index of the bucket.
+        """Best Running time: O(1); 
+        Worst Running time: O(L);
+        The algorithm finds the key of the linkedlist and the index of the bucket.
         """
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
@@ -89,7 +95,9 @@ class HashTable(object):
     def get(self, key):
         """Return the value associated with the given key, or raise KeyError.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O(1); The algorithm finds the key of the linkedlist and the index of the bucket.
+        """Best Running time: O(1); 
+        Worst  Running time: O(L);
+        The algorithm finds the key of the linkedlist and the index of the bucket.
         """
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
@@ -106,7 +114,9 @@ class HashTable(object):
     def set(self, key, value):
         """Insert or update the given key with its associated value.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O(1); The algorithm finds the key of the linkedlist and the index of the bucket. It also performs without transversal.
+        """Best Running time: O(1);
+        Worst Running time: O(L);
+        The algorithm finds the key of the linkedlist and the index of the bucket. It also performs without transversal.
         """
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
@@ -121,7 +131,9 @@ class HashTable(object):
     def delete(self, key):
         """Delete the given key from this hash table, or raise KeyError.
         TODO: Running time: O(???) Why and under what conditions?"""
-        """Running time: O(1); The algorithm finds the key of the linkedlist and the index of the bucket.
+        """Best Running time: O(1); 
+        Worst Running time: O(L);
+        The algorithm finds the key of the linkedlist and the index of the bucket.
         """
         # TODO: Find bucket where given key belongs
         # TODO: Check if key-value entry exists in bucket
