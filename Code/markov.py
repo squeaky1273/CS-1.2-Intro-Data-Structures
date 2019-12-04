@@ -41,8 +41,7 @@ def random_word(markov):
 def random_walk(word):
     sentence = []
     for word in words:
-        if word[-1] in ['.','!','?'] and word != '.':
-            sentence.append(word)
+        sentence.append(word)
     print(sentence)
 
 if __name__ ==  '__main__':
