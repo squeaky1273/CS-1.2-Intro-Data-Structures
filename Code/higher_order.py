@@ -1,9 +1,8 @@
 import random
 f = open('corpus.txt')
 text = f.read().lower().split
-
-class Markov():
-    """
+"""
+class Queue():
     def __init__():
         self.queue = list()
     
@@ -26,28 +25,34 @@ class Markov():
                 yield(item)
         else:
             raise IndexError('No items in queue.')
-    """
-    
-    def __init__(self, text):
-        self.chain = {}
-        n_words = len(text)
-        for _, word_1 in enumerate(text):
-            if n_words > _ + 2:
-                word_2 = text[_ + 1]
-                word = text[_ + 2]
-                if (word_1, word_2) not in self.chain:
-                    self.chain[(word_1, word_2)] = [word]
-                else:
-                    self.chain[(word_1, word_2)].append(word)
+"""
+def higher_order(text):
+    chain = {}
+    n_words = (len(text)
+    for index, word_1 in enumerate(text):
+        if n_words > index + 2:
+            word_2 = text[index + 1]
+            word_3 = text[index + 2]
+            if (word_1, word_2) not in chain:
+                chain[(word_1, word_2)] = [text[word_3]]
+            else:
+                chain[(word_1, word_2)].append(text(word_3))
 
-    def random_walk():
-        sentence = random.choice(text)
-        while len(sentence) < 10:
-            word = random.choice(self.chain(sentence))
-            words += '' + word
-            sentence.append(words)
-        print(sentence)
+    return chain
+
+def get_state():
+    pass
+
+def random_walk():
+    sentence = []
+    words = random.choice(text)
+    while len(words) < 140:
+        word = random.choice(chain(words))
+        sentence.append(word)
+    print(sentence)
         
 if __name__ == "__main__":
-    sentences = Markov.random_walk()
+    chains = higher_order(text)
+    print(chains.chain)
+    sentences = chains.random_walk
     print(sentences)
