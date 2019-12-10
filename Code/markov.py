@@ -15,9 +15,9 @@ text = f.read().lower().split
 def markov_chain(text):
     markov = {}
 
-    for _ in range(len(text)-1):
-        word_1 = text[_]
-        word_2 = text[_+1]
+    for index in range(len(text)-1):
+        word_1 = text[index]
+        word_2 = text[index+1]
 
         #if word_1 in markov.keys():
             #markov[word_1].add_count(word_2)
