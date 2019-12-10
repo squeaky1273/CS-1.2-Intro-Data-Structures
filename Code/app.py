@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request
 #from histogram import histogram 
 #from dictogram import Dictogram
 from sample import sample_by_frequency
-from markov import markov_chain, random_walk
+from markov import markov_chain
 
 import os
 
