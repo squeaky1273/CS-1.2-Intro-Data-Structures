@@ -35,7 +35,7 @@ def higher_markov(text):
         word_2 = text[index + 1]
         word_3 = text[index + 2]
         key = (word_1, word_2)
-        if key not in chain:
+        if key not in chain.keys:
             chain[key] = Dictogram()
     
         chain.get[key].append(text(word_3))

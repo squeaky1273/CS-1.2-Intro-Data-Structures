@@ -18,7 +18,7 @@ parse_text = [word.translate(str.maketrans(unwanted)) for word in content]
 def index():  
     #histo = histogram(content)
     histo = markov_chain(parse_text)
-    random_word = list()
+    random_word = []
     for _ in range(10):
         random_word.append(sample_by_frequency(histo))
     
