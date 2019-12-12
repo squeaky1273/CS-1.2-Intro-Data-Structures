@@ -38,10 +38,10 @@ def markov_chain(text):
 def random_word(markov):
     markov.sample()
 
-def random_walk(word):
+def random_walk(word, markov):
     sentence = []
-    for word in words:
-        sentence.append(word)
+    for word in text:
+        sentence.append(random_word)
     print(sentence)
 
 if __name__ ==  '__main__':

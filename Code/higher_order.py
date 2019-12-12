@@ -28,7 +28,7 @@ class Queue():
         else:
             raise IndexError('No items in queue.')
 """
-def higher_order(text):
+def higher_markov(text):
     chain = {}
     for index in range (len(text)-1):
         word_1 = text[index]
@@ -42,13 +42,8 @@ def higher_order(text):
 
     return chain
 
-def random_word(markov):
-    markov.sample()
-
-def states(word, markov):
-    '''Gets states with word as first in tuple'''
-    state = [state for state in markov.keys() if word == state[0]]
-    return state
+def random_word(chain):
+    chain.sample()
 
 def random_walk():
     sentence = []
@@ -57,7 +52,10 @@ def random_walk():
     return sentence
         
 if __name__ == "__main__":
+    """
     markov = higher_order(text)
     print(markov.chain)
     sentences = markov.random_walk()
     print(sentences)
+    """
+    random_walk(higher_markov(text))

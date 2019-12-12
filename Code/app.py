@@ -10,18 +10,18 @@ app = Flask(__name__)
 
 f = open('corpus.txt', 'r')
 content = f.read().split()
+unwanted = dict.fromkeys(map(ord, '\n\r""''.()[],\'!?-;_*:'), None)
+parse_text = [word.translate(str.maketrans(unwanted)) for word in content]
+
 
 @app.route('/') 
 def index():  
     #histo = histogram(content)
-    histo = markov_chain(content)
+    histo = markov_chain(parse_text)
     random_word = list()
     for _ in range(10):
-        random_word.append(sample_by_frequency(histo)) 
+        random_word.append(sample_by_frequency(histo))
     
     return render_template("index.html", random_word=random_word) 
-
-    low = ''.join(content).lower()
-    print(low)
 
 if __name__ == '__main__': app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
