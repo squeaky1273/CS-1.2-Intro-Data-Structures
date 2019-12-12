@@ -1,6 +1,6 @@
 
 f = open('corpus.txt')
-text = f.read().lower().split
+text = f.read().lower().split()
 from dictogram import Dictogram
 
 """

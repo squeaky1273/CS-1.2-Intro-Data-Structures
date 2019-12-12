@@ -3,13 +3,14 @@ from flask import Flask, render_template, redirect, url_for, request
 #from dictogram import Dictogram
 from sample import sample_by_frequency
 from markov import markov_chain
+#from higher_order import higher_markov
 
 import os
 
 app = Flask(__name__)
 
 f = open('corpus.txt', 'r')
-content = f.read().split()
+content = f.read().lower().split()
 unwanted = dict.fromkeys(map(ord, '\n\r""''.()[],\'!?-;_*:'), None)
 parse_text = [word.translate(str.maketrans(unwanted)) for word in content]
 
