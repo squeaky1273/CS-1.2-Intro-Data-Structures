@@ -1,9 +1,9 @@
 from flask import Flask, render_template, redirect, url_for, request
 #from histogram import histogram 
 #from dictogram import Dictogram
-from sample import sample_by_frequency
-from markov import markov_chain
-#from higher_order import higher_markov
+#from sample import sample_by_frequency
+#from markov import markov_chain
+from higher_order import higher_markov, random_walk
 
 import os
 
@@ -18,10 +18,10 @@ parse_text = [word.translate(str.maketrans(unwanted)) for word in content]
 @app.route('/') 
 def index():  
     #histo = histogram(content)
-    histo = markov_chain(parse_text)
+    histo = higher_markov(parse_text)
     random_word = []
-    for _ in range(10):
-        random_word.append(sample_by_frequency(histo))
+    for index in range(10):
+        random_word.append(random_walk(histo))
     
     return render_template("index.html", random_word=random_word) 
 

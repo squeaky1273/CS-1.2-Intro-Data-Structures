@@ -1,61 +1,68 @@
+from dictogram import Dictogram
+from Queue import Queue
+from random import choice
 
 f = open('corpus.txt')
 text = f.read().lower().split()
-from dictogram import Dictogram
 
-"""
-class Queue():
-    def __init__():
-        self.queue = list()
-    
-    def __str__(self):
-        return self.queue.__str__()
-
-    def enqueue(self):
-        self.queue.append(item)
-
-    def dequeue(self):
-        if not len(self.queue) == 0:
-            item = self.queue.delete(0)
-            return item
-        else:
-            raise IndexError('No items in queue.')
-
-    def iterate(self):
-        if not len(self.queue) == 0:
-            for item in self.queue:
-                yield(item)
-        else:
-            raise IndexError('No items in queue.')
-"""
 def higher_markov(text):
     chain = {}
-    for index in range (len(text)-1):
+    for index in range(len(text)-2):
         word_1 = text[index]
         word_2 = text[index + 1]
         word_3 = text[index + 2]
         key = (word_1, word_2)
-        if key not in chain.keys:
+        if key not in chain.keys():
             chain[key] = Dictogram()
-    
-        chain.get[key].append(text(word_3))
+        
+        chain.get(key).add_count(word_3)
 
     return chain
+    print(chain)
 
-def random_word(chain):
-    chain.sample()
+def random_words(chain):
+    all_tuples = chain.keys()
+    random_tuple = choice(list(all_tuples))
+    markov = chain.get(random_tuple)
+    return markov.sample()
 
-def random_walk():
+def random_walk(chain):
     sentence = []
-    for word in words:
-        sentence.append(word)
+    index = 0
+    for word in range(1):
+        states = random_words(chain) # this gets first random word
+
+        rand_state = choice(states)
+
+        next_word = rand_state[index]
+        next_word = random_words(chain)
+
+        sentence.append(next_word)
+
+        index += 1
+
+    #for word in range(10):
+        
+        #states = random_word(chain) # this gets first random word
+        
+        #next_word = [states[1], word]
+
+        #for next_word in range(10):
+            #sentence.append(next_word)
+
     return sentence
         
 if __name__ == "__main__":
+    f = open('corpus.txt')
+    text = f.read().lower().split()
     """
     markov = higher_order(text)
     print(markov.chain)
     sentences = markov.random_walk()
     print(sentences)
     """
-    random_walk(higher_markov(text))
+    markov = higher_markov(text)
+    random_word = random_words(markov)
+    sentence = random_walk(random_word)
+    print(sentence)
+    #print(random_walk(higher_markov(text)))

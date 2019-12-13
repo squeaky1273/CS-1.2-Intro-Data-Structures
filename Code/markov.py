@@ -36,9 +36,9 @@ def markov_chain(text):
     return markov
 
 def random_word(markov):
-    markov.sample()
+    return markov.sample()
 
-def random_walk(word, markov):
+def random_walk(word):
     sentence = []
     for word in text:
         sentence.append(random_word)
