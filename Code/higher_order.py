@@ -29,17 +29,16 @@ def random_words(chain):
 def random_walk(chain):
     sentence = []
     index = 0
-    for word in range(1):
+    for word in range(10):
         states = random_words(chain) # this gets first random word
 
         rand_state = choice(states)
 
         next_word = rand_state[index]
+
         next_word = random_words(chain)
 
         sentence.append(next_word)
-
-        index += 1
 
     #for word in range(10):
         
