@@ -10,23 +10,23 @@ import os
 
 app = Flask(__name__)
 
-f = open('corpus.txt', 'r')
-content = f.read().lower().split()
-unwanted = dict.fromkeys(map(ord, '\n\r""''.()[],\'!?-;_*:'), None)
-parse_text = [word.translate(str.maketrans(unwanted)) for word in content]
+f = open('corpus.txt', 'r') #Open the file for the text
+content = f.read().lower().split() #lowercase all of the words
+unwanted = dict.fromkeys(map(ord, '\n\r""''.()[],\'!?-;_*:'), None) #remove all punctuation
+parse_text = [word.translate(str.maketrans(unwanted)) for word in content] #remove all punctuation from the source text
 
 
 @app.route('/') 
 def index():  
     #histo = histogram(content)
-    histo = higher_markov(parse_text)
+    histo = higher_markov(parse_text) #call higher order markov chain from other file with the edited corpus
     sentence = []
     walk = random_walk(histo)
     for index in range(1):
         sentence.append(walk)
     
     # random_word = ''.join(str(sentence) for sentence in walk)
-    for x in range(len(sentence)):
+    for x in range(len(sentence)): #join the words together into sentence instead of separate letters
         random_word = sentence[x]
     
     return render_template("index.html", random_word=random_word) 
