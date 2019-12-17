@@ -22,9 +22,9 @@ class Listogram(list):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
         chosen = False
-        for counts in range(len(self)):
-            if self[counts][0] == word:
-                self[counts][1] += count
+        for counts in self:
+            if counts[0] == word:
+                counts[1] += count
                 chosen = True
         if not chosen:
             self.append([word, count])
@@ -60,15 +60,15 @@ class Listogram(list):
         """Return a word from this histogram, randomly sampled by weighting
         each word's probability of being chosen by its observed frequency."""
         # TODO: Randomly choose a word based on its frequency in this histogram
-        prob = 0 
+        total = 0 
         guess = random.random() #Guess is equal to choose randomly a random number 0 to 1
         for word_list in self:
             words = word_list[0]
             chance = word_list[1]/self.tokens 
-            if guess > prob and guess <= prob + chance: #If the guess is less than 0 and the guess is less or equal 
+            if guess > total and guess <= total + chance: #If the guess is less than 0 and the guess is less or equal 
                                                             #to 0 and the random number generated
                 return words #Return the words
-            prob += chance #0 is added to the chance that was recieved.
+            total += chance #0 is added to the chance that was recieved.
 
 def print_histogram(word_list):
     print()

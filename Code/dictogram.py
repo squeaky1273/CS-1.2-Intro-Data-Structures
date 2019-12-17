@@ -21,15 +21,15 @@ class Dictogram(dict):
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
-        # if word not in self:
-        #     # self[word] = self.get(word, 0) + count #Leave it at 0
-        #     self.types += 1 #Add one to the count for the type
-        # else:
-        #     self.tokens += count #Add to the count
-        #     # self[word] += count #Add to the count
+        if word not in self:
+             self[word] = count #Leave it at 0
+             self.types += 1 #Add one to the count for the type
+        else:
+             #self.tokens += count #Add to the count
+             self[word] += count #Add to the count
         self.tokens += count
-        self.types = len(self) # kinda janky way to do it
-        self[word] = self.get(word, 0) + count
+        #self.types = len(self) # kinda janky way to do it
+        #self[word] = self.get(word, 0) + count
 
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
@@ -43,14 +43,14 @@ class Dictogram(dict):
         """Return a word from this histogram, randomly sampled by weighting
         each word's probability of being chosen by its observed frequency."""
         # TODO: Randomly choose a word based on its frequency in this histogram
-        prob = 0 #
+        total = 0
         guess = random.random() #Guess is equal to choose randomly a random number 0 to 1
         for word_list in self:
             chance = self[word_list]/self.tokens #Chance is equal to the word_list in the total number of words.
-            if guess > prob and guess <= prob + chance: #If the guess is less than 0 and the guess is less or equal 
+            if guess > total and guess <= total + chance: #If the guess is less than 0 and the guess is less or equal 
                                                             #to 0 and the random number generated
                 return word_list #Return the word_list
-            prob += chance #0 is added to the chance that was recieved.
+            total += chance #0 is added to the chance that was recieved.
             
 
 def print_histogram(word_list):
