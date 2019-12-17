@@ -21,12 +21,12 @@ class Listogram(list):
     def add_count(self, word, count=1):
         """Increase frequency count of given word by given count amount."""
         # TODO: Increase word frequency by count
-        chosen = False
-        for counts in self:
-            if counts[0] == word:
-                counts[1] += count
-                chosen = True
-        if not chosen:
+        chosen = True
+        for items in self:
+            if items[0] == word:
+                items[1] += count
+                chosen = False
+        if chosen:
             self.append([word, count])
             self.types += 1
         self.tokens += count
@@ -34,16 +34,16 @@ class Listogram(list):
     def frequency(self, word):
         """Return frequency count of given word, or 0 if word is not found."""
         # TODO: Retrieve word frequency count
-        for word_list in self:
-            if word == word_list[0]:
-                return word_list[1]
+        for items in self:
+            if word == items[0]:
+                return items[1]
         return 0
 
     def __contains__(self, word):
         """Return boolean indicating if given word is in this histogram."""
         # TODO: Check if word is in this histogram
-        for word_list in self:
-            if word == word_list[0]:
+        for items in self:
+            if word == items[0]:
                 return True
         return False
 
@@ -51,9 +51,9 @@ class Listogram(list):
         """Return the index of entry containing given target word if found in
         this histogram, or None if target word is not found."""
         # TODO: Implement linear search to find index of entry with target word
-        for _ in range(len(self)):
-            if target == self[_][0]:
-                return _
+        for items in self:
+            if target == items[0]:
+                return self.index(items)
         return None
 
     def sample(self):
@@ -62,9 +62,9 @@ class Listogram(list):
         # TODO: Randomly choose a word based on its frequency in this histogram
         total = 0 
         guess = random.random() #Guess is equal to choose randomly a random number 0 to 1
-        for word_list in self:
-            words = word_list[0]
-            chance = word_list[1]/self.tokens 
+        for items in self:
+            words = items[0]
+            chance = items[1]/self.tokens 
             if guess > total and guess <= total + chance: #If the guess is less than 0 and the guess is less or equal 
                                                             #to 0 and the random number generated
                 return words #Return the words
