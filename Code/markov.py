@@ -12,7 +12,7 @@ text = f.read().lower().split
 
 # print(text)
 
-def markov_chain(text):
+def markov_chain(text):#Create a chain to scramble the words based on frequency and Dictogram
     markov = {}
 
     for index in range(len(text)-1):
@@ -35,10 +35,10 @@ def markov_chain(text):
     print(markov)
     return markov
 
-def random_word(markov):
+def random_word(markov):#Choose a random word from the markov chain
     return markov.sample()
 
-def random_walk(word):
+def random_walk(word):#Create a sentence based on the random words from the markov chain
     sentence = []
     for word in text:
         sentence.append(random_word)
